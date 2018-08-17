@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <title>WebAssembly Hello1 Example</title>
+</head>
+<body>
+    <script src="mono-wasm-browser.js"></script>
+    <script src="sample_module.js"></script>
+    <script type='text/javascript'>
+            Module.mono_wasm_debug = true;
+            Module.onWasmDOMInitialized.push(
+                function() {
+                    console.log("Initialized");
+                    Module.applicationAssemblies.push("hello.dll");
+                }
+            )
+            Module.onWasmDOMStarted.push(
+                function() {
+                    console.log("Started");
+
+                    try {
+                        var res = Module.runMainClass("hello", "Hello", "Program", "Main", "Hello from C#.");
+                        if (res)
+                            console.log(Module.conv_string (res));
+                    } catch (e) {
+                        console.log(e);
+                    }
+
+                }
+
+            )
+    </script>
+
+    <script defer src="mono.js"></script>
+</body>
+</html>

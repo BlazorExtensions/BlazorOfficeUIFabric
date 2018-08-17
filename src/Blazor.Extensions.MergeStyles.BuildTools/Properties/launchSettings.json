@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Blazor.Extensions.MergeStyles.BuildTools": {
+      "commandName": "Project",
+      "commandLineArgs": "checknodejs -v 8.1.4"
+    },
+    "dotnet": {
+      "commandName": "Project"
+    }
+  }
+}

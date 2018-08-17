@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>DOMElement</title>
+    <link rel="import" href="sections/section1.html">
+    <link rel="import" href="sections/section2.html">      
+    <style>
+        body {
+            background-color: powderblue;
+        }
+        h1 {
+            color: blue;
+        }
+        p {
+            color: red;
+        }
+    </style>    
+  </head>
+  <body id="docBody">
+    <h1>DOMElement</h1>
+    <h2>Tinkering with HTML DOM Elements</h2>
+
+    Example of tinkering with HTML DOM Elements
+
+    <h2>Features</h2>
+    <ul>
+        <li>
+            <p><a href="http://w3c.github.io/webcomponents/spec/imports/" target="_blank" rel="nofollow">HTML 5 Imports specs</a></p>
+        </li>
+        <li>
+            <p>Other reference links</p>
+        <ul>
+        <li><a href="https://www.webcomponents.org/community/articles/introduction-to-html-imports" target="_blank" rel="nofollow">WebComponents.org introduction</a></li>
+        <li><a href="https://www.html5rocks.com/en/tutorials/webcomponents/imports/" target="_blank" rel="nofollow">html5rocks.com tutorial</a></li>
+        <li><a href="http://blog.teamtreehouse.com/introduction-html-imports" target="_blank" rel="nofollow">teamtreehouse.com introduction</a></li>
+        </ul>
+    </ul>
+    <p id="loading"><i class="fa fa-refresh fa-spin" style="font-size:14px;margin-right:0.5em;"></i> Loading...</p>
+
+
+    <script src="mono-wasm-browser.js" defer></script>
+    <script src="sample_module.js"></script>
+    <script type='text/javascript'>
+            //Module.mono_wasm_debug = true;
+            Module.onWasmDOMInitialized.push(
+                function() {
+
+                    Module.applicationAssemblies.push("DOMElement.dll");
+                    console.log("Initialized");
+                }
+            )
+            Module.onWasmDOMStarted.push(
+                function() {
+
+                    try {
+                        var res = Module.runMainClass("DOMElement", "DOMElement", "Program", "Main", "Hello from C#.");
+                        if (res)
+                            console.log(Module.conv_string (res));
+                    } catch (e) {
+                        console.log(e);
+                    }
+
+                    console.log("Started");
+                }
+            )
+    </script>  
+    <script defer src="mono.js"></script>        
+
+  </body>
+
+
+</html>

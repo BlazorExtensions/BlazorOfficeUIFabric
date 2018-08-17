@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>||Working with elements||</title>
+  </head>
+  <body>
+        <div id="div1">The text above has been created dynamically.</div>
+        <script src="mono-wasm-browser.js"></script>
+        <script src="sample_module.js"></script>
+        <script type='text/javascript'>
+                //Module.mono_wasm_debug = true;
+                Module.onWasmDOMInitialized.push(
+                    function() {
+
+                        Module.applicationAssemblies.push("CreateElement.exe");
+                        console.log("Initialized");
+                    }
+                )
+                Module.onWasmDOMStarted.push(
+                    function() {
+    
+                        try {
+                            var res = Module.runMainClass("CreateElement", "CreateElement", "MainClass", "Main", "Hello from C#.");
+                            if (res)
+                                console.log(Module.conv_string (res));
+                        } catch (e) {
+                            console.log(e);
+                        }
+    
+                        console.log("Started");
+                    }
+    
+                )
+        </script>          
+    <script defer src="mono.js"></script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    <title>DragNDrop</title>
+  </head>
+  <body>
+        <h1>DragNDrop</h1>
+        <div class="dropzone">
+            <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+                This div is draggable
+            </div>
+        </div>
+        <div class="dropzone"></div>
+        <div class="dropzone"></div>
+        <div class="dropzone"></div>
+        
+        <style>
+            #draggable {
+            width: 200px;
+            height: 20px;
+            text-align: center;
+            background: white;
+            }
+        
+            .dropzone {
+            width: 200px;
+            height: 20px;
+            background: blueviolet;
+            margin-bottom: 10px;
+            padding: 10px;
+            }
+        </style>    
+
+        <script src="mono-wasm-browser.js" defer></script>
+        <script src="sample_module.js"></script>
+        <script type='text/javascript'>
+                //Module.mono_wasm_debug = true;
+                Module.onWasmDOMInitialized.push(
+                    function() {
+
+                        Module.applicationAssemblies.push("DragNDrop.exe");
+                        console.log("Initialized");
+                    }
+                )
+                Module.onWasmDOMStarted.push(
+                    function() {
+
+                        try {
+                            var res = Module.runMainClass("DragNDrop", "DragNDrop", "MainClass", "Main", "Hello from C#.");
+                            if (res)
+                                console.log(Module.conv_string (res));
+                        } catch (e) {
+                            console.log(e);
+                        }
+
+                        console.log("Started");
+                    }
+                )
+        </script>  
+        <script defer src="mono.js"></script>        
+
+
+    </body>
+</html>

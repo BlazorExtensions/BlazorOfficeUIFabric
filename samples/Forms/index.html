@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" href="assets/css/variables.css">
+    <link rel="stylesheet" href="assets/css/nativize.css">  
+    <link rel="stylesheet" href="assets/css/global.css">  
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/nav.css">
+    <link rel="stylesheet" href="assets/css/demo.css">
+    <link rel="stylesheet" href="assets/css/section.css">
+
+    <title>||Forms Sample||</title>
+    
+  </head>
+  <body>
+        <div id="loading" style="line-height: 115px; text-align: center;">
+            <img alt=" Loading..." src="assets/img/loader.gif">
+        </div>
+        <nav class="nav js-nav">
+            <header class="nav-header">
+                <h1 class="nav-title">Forms
+                    <strong>API Demos</strong>
+                </h1>
+            </header>
+            <div class="nav-item u-category-first-form">
+                <h5 class="nav-category">
+                    Forms
+                </h5>
+                <button type="button" id="button-first-form" data-section="first-form" class="nav-button">Your first <em>HTML form</em></button>
+            </div>
+            <footer class="nav-footer">
+                <button type="button" id="button-about" data-modal="about" class="nav-footer-button">About</button>
+                <a class="nav-footer-logo" href="https://github.com" aria-label="Homepage">
+                </a>
+            </footer>
+        </nav>
+
+        <main class="content js-content">
+
+
+        </main>
+
+        <script src="mono-wasm-browser.js"></script>
+        <script src="sample_module.js"></script>
+        <script type='text/javascript'>
+                Module.mono_wasm_debug = true;
+                Module.onWasmDOMInitialized.push(
+                    function() {
+
+                        Module.applicationAssemblies.push("Forms.exe");
+                        console.log("Initialized");
+                    }
+                )
+                Module.onWasmDOMStarted.push(
+                    function() {
+    
+                        try {
+                            var res = Module.runMainClass("Forms", "Forms", "MainClass", "Main", "Hello from C#.");
+                            if (res)
+                                console.log(Module.conv_string (res));
+                        } catch (e) {
+                            console.log(e);
+                        }
+    
+                        console.log("Started");
+                    }
+    
+                )
+        </script>          
+    <script defer src="mono.js"></script>
+
+    </div>
+  </body>
+</html>

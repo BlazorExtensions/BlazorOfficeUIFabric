@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>DOMTree</title>
+    <style>
+        body {
+            background-color: powderblue;
+        }
+        h1 {
+            color: blue;
+        }
+        p {
+            color: red;
+        }
+    </style>    
+  </head>
+  <body id="docBody">
+    <h1>DOMTree</h1>
+
+    This is the DOMTree Example.  (See developer console for output.)
+
+    <script src="mono-wasm-browser.js" defer></script>
+    <script src="sample_module.js"></script>
+    <script type='text/javascript'>
+            Module.mono_wasm_debug = true;
+            Module.onWasmDOMInitialized.push(
+                function() {
+
+                    Module.applicationAssemblies.push("DOMTree.dll");
+                    console.log("Initialized");
+                }
+            )
+            Module.onWasmDOMStarted.push(
+                function() {
+
+                    try {
+                        var res = Module.runMainClass("DOMTree", "DOMTree", "Program", "Main", "Hello from C#.");
+                        if (res)
+                            console.log(Module.conv_string (res));
+                    } catch (e) {
+                        console.log(e);
+                    }
+
+                    console.log("Started");
+                }
+            )
+    </script>  
+    <script defer src="mono.js"></script>        
+
+  </body>
+
+
+</html>
+

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+    <!-- All of the Node.js APIs are available in this renderer process. -->
+    We are using Node.js <script>document.write(process.versions.node)</script>,
+    Chromium <script>document.write(process.versions.chrome)</script>,
+    and Electron <script>document.write(process.versions.electron)</script>.
+
+
+
+    <script>
+      // You can also require other files to run in this process
+      require('./renderer.js')
+    </script>
+
+    <script src="./publish/mono-wasm-browser.js"></script>
+    <script src="./publish/sample_module_node.js"></script>
+    <script type='text/javascript'>
+        //Module.mono_wasm_debug = true;
+        Module.onWasmDOMInitialized.push(
+            function() {
+                console.log("Initialized");
+                Module.applicationAssemblies.push("HelloElectron.exe");
+            }
+        )
+        Module.onWasmDOMStarted.push(
+            function() {
+                try {
+                    var res = Module.runMainClass("HelloElectron", "HelloElectron", "MainClass", "Main", "Hello from C#.");
+                    console.log("Started");
+                    if (res)
+                        console.log(Module.conv_string (res));
+                } catch (e) {
+                    console.log(e);
+                }
+
+            }
+
+        )
+      </script>
+
+      <script async src="./publish/mono.js"></script>    
+  </body>
+</html>

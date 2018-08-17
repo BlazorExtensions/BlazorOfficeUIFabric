@@ -1,0 +1,11 @@
+@inherits ImageBase;
+<div class="@($"{ClassNames.Root}")" style="height:@(Height);width:@(Width)" ref="divRef">
+    <img ref="imageRef"
+         onload="@OnImageLoaded"
+         onerror="@OnImageError"
+         class="@($"{ClassNames.Image}")"
+         src="@Src"
+         alt="@Alt"
+         role="@Role"
+         />
+</div>

@@ -1,0 +1,90 @@
+{
+  "large": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "17px",
+    "fontWeight": 300
+  },
+  "medium": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "14px",
+    "fontWeight": 400
+  },
+  "mediumPlus": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "15px",
+    "fontWeight": 400
+  },
+  "mega": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "72px",
+    "fontWeight": 100
+  },
+  "small": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "12px",
+    "fontWeight": 400
+  },
+  "smallPlus": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "13px",
+    "fontWeight": 400
+  },
+  "superLarge": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "42px",
+    "fontWeight": 100
+  },
+  "tiny": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "10px",
+    "fontWeight": 600
+  },
+  "xLarge": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "21px",
+    "fontWeight": 100
+  },
+  "xSmall": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "11px",
+    "fontWeight": 400
+  },
+  "xxLarge": 
+  {
+    "MozOsxFontSmoothing": "grayscale",
+    "WebkitFontSmoothing": "antialiased",
+    "fontFamily": "'Segoe UI Web (Arabic)', 'Segoe UI', -apple-system, BlinkMacSystemFont, 'Roboto', 'Helvetica Neue', sans-serif",
+    "fontSize": "28px",
+    "fontWeight": 100
+  }
+}
